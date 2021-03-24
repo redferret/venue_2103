@@ -69,6 +69,7 @@ describe Venue do
 
   describe '#kick_out' do
     it 'kicks out patrons that are over the capacity' do
+      test_list = ['Rich', 'Mark', 'Drew', 'Matt', 'Keith']
       venue = Venue.new('Bluebird', 5)
       venue.add_patron('Rich')
       venue.add_patron('Mark')
@@ -81,6 +82,7 @@ describe Venue do
       venue.kick_out
 
       expect(venue.over_capacity?).to eq(false)
+      expect(venue.patrons).to match_array(test_list)
     end
 
     it 'does nothing if not over capacity' do
