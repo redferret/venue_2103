@@ -82,5 +82,19 @@ describe Venue do
 
       expect(venue.over_capacity?).to eq(false)
     end
+
+    it 'does nothing if not over capacity' do
+      test_list = ['Rich', 'Mark', 'Drew', 'Matt', 'Keith']
+      venue = Venue.new('Bluebird', 5)
+      venue.add_patron('Rich')
+      venue.add_patron('Mark')
+      venue.add_patron('Drew')
+      venue.add_patron('Matt')
+      venue.add_patron('Keith')
+
+      venue.kick_out
+
+      expect(venue.patrons).to match_array(test_list)
+    end
   end
 end
