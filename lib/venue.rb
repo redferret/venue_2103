@@ -7,6 +7,9 @@ class Venue
     @patrons = []
   end
 
+  def has_vip?
+  end
+
   def add_patron(patron)
     @patrons << patron
   end
