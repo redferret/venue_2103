@@ -7,6 +7,10 @@ class Venue
     @patrons = []
   end
 
+  def some_complex_method_stuff (a, b, c, d)
+    # do something crazy
+  end
+
   def has_vip?
   end
 
